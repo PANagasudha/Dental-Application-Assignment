@@ -1,0 +1,181 @@
+Basic Reset & Typography
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f8f8;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Helper Classes */
+.desktop-only { display: block; }
+.mobile-view { display: none; } /* Initially hidden for desktop */
+
+/* Buttons */
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #ff7043; /* Orange from design */
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #e65100; /* Darker orange on hover */
+}
+
+.btn-secondary {
+    background-color: #ff7043; /* Orange from design */
+    color: white;
+    width: 100%;
+    margin-top: 15px;
+    padding: 12px 20px; /* Slightly larger for form button */
+    font-size: 1.1em;
+}
+
+.btn-secondary:hover {
+    background-color: #e65100;
+}
+
+/* Header */
+#main-header {
+    background-color: #fff;
+    padding: 15px 0; /* Increased padding */
+    border-bottom: 1px solid #eee;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Lighter shadow */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#main-header.scrolled {
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* More pronounced shadow on scroll */
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Spacing between logo image and text */
+}
+
+.logo img {
+    height: 35px; /* Adjusted height for logo image */
+}
+
+.logo .logo-text {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: #333;
+    letter-spacing: 1px; /* Slightly more spaced out */
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Increased gap */
+}
+
+.phone-number {
+   border:2px solid black;
+   padding-left:10px;
+   padding-right:10px ;
+   padding-bottom:4px;
+   padding-top:4px;
+   border-radius: 50px;
+    font-size:17px;
+}
+.top-page{
+    width:100%;
+    display:flex;
+}
+.top-page-first-half{
+    width:70%;
+    background-image: url("C:/Users/nagas/OneDrive/Desktop/dental/Images/d9e2eb1945ffd93ea40450c1db6dd1c7d2b70f19.jpg") !important;
+    height:20vh;
+     background-size: cover; /* Important for background images */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent repeating */
+    /* Consider adding a min-height so the div has dimensions to show the background */
+    min-height: 400px; 
+}
+.top-page-first-half img{
+    text-align:center;
+    top:50%;
+}
+.top-page-second-half{
+    width:30%;
+}
+
+
+
+/* Mobile View (iPhone 13 & 14 - approx. max-width 768px) */
+@media (max-width: 768px) {
+    .desktop-only { display: none; }
+    .mobile-view { display: block; } /* Show mobile-specific content */
+
+    /* Header adjustments for mobile */
+    #main-header {
+        padding: 10px 0;
+    }
+    .header-content {
+        justify-content: space-between; /* Space between logo and phone */
+    }
+    .logo .logo-text {
+        display: none; /* Hide DENTAL text on mobile header */
+    }
+    .logo img {
+        height: 25px; /* Smaller logo in header */
+    }
+    .phone-number {
+        font-size: 1em;
+    }
+
+    /* Hide desktop hero section */
+    .hero-section.desktop-view {
+        display: none;
+    }
+
+    /* Mobile Hero Section Specific Styles */
+
+}
+
+/* Further smaller adjustments (e.g., iPhone SE, Galaxy Fold) */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .header-content {
+        gap: 10px;
+    }
+
+    .phone-number {
+        font-size: 0.9em;
+    }
+
+    
+}
